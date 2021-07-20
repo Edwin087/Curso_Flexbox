@@ -1,0 +1,61 @@
+*,
+* ::after,
+::before {
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #333;
+  color: white;
+  height: 30vh;
+  width: 1000px;
+
+  display: flex;
+  /* define que una caja sera flexbox o bloque  */
+
+  flex-direction: row;
+  /* flex-direction: row-reverse; 
+   flex-direction: column; row, rpwe-reverse, column,reverse */
+  flex-wrap: nowrap;
+  /*nowrap, wrap, reverse */
+
+  flex-flow: row nowrap;
+  /* Esta es una abreviatura de las propiedades flex-directiony flex-wrap */
+
+  justify-content: flex-start;
+  /*flex-start, center, flex-end, space-between, space-around, space-evenly */
+  align-items: stretch;
+  /* define la alineacion de los hijos en el  eje transversal dento de cada linea */
+
+  align-content: flex-start;
+  /* define la alineacion de los hijos en el  eje transversal dento de cada linea. funciona cunado los hijos estan en una sola linea( CUANDO flex:word-wrap: es nowrap NO FUNCIONA) ; */
+}
+
+.item {
+  border: thin solid #999;
+  /* width: 20%;
+  height: 20%; */
+  background-color: #666;
+  /* width: 100%; */
+
+  flex-grow: 0;
+  /* cuando la caja flexbox tenga espacio sobrante, es la habilidad de crecer, valor por defecto 0, no haceptan valores negativos. */
+  flex-shrink: 1;
+  /* cuando la caja flexbox tenga espacio sobrante, es la habilidad de encoger, valor por defecto 1, no haceptan valores negativos. */
+
+  flex-basis: auto;
+}
+
+.item:nth-child(2) {
+  /* flex-grow: 0; */
+  flex-shrink: 2;
+}
+
+.item:nth-child(3) {
+  /* flex-grow: 0; */
+}
+
+/* .item:nth-child(2),
+.item:nth-child(17) {
+  font-size: 150%;
+} */
