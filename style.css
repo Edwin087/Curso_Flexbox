@@ -7,7 +7,7 @@
 .container {
   background-color: #333;
   color: white;
-  height: 30vh;
+  height: 400px;
   width: 1000px;
 
   display: flex;
@@ -44,17 +44,25 @@
   /* cuando la caja flexbox tenga espacio sobrante, es la habilidad de encoger, valor por defecto 1, no haceptan valores negativos. */
 
   flex-basis: auto;
+  flex-basis: 100px;
+  /* Esto define el tamaño predeterminado de un elemento antes de que se distribuya el espacio restante. */
+
+  flex: 0 1 auto;
+  /* Es un shorthand de las propiedades flex-grow: 0;   flex-shrink: 1;  flex-basis: auto; */
+
+  order: 0;
+  /* representa el orden que tendra los elementos hijos en la caja flexbos valor por defecto 0  */
 }
 
 .item:nth-child(2) {
   /* flex-grow: 0; */
   flex-shrink: 2;
+  order: 1;
 }
 
 .item:nth-child(3) {
   /* flex-grow: 0; */
 }
-
 /* .item:nth-child(2),
 .item:nth-child(17) {
   font-size: 150%;
